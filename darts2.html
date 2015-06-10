@@ -108,6 +108,7 @@
                var r=0;//round
                var a=0;//アベレージ
                var t=0;//トータル
+               var xy = [[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,],[,]];
                var ten=0;
                var aaa = new Array();//一頭毎の点数
                var asd = new Array();//ラウンドの点数
@@ -115,7 +116,6 @@
                var result =document.getElementById("result"); 
                var round =document.getElementById("round");
                var maru=document.getElementById("maru");
-
 
        result.innerHTML=
 "round["+(r+1)+"]<br>"+
@@ -179,6 +179,9 @@ round.innerHTML=
                                 t=0;
                                 asd.length=0;
                                 a=0;
+                                for(var i=0;i<=ten;i++){
+                                  marui.innerHTML+='<div style="position:absolute; top:'+xy[i][1]+'px; left:'+xy[i][0]+'px;"><img src="ten.png" ></div>';
+                                }
                                 alert("Finish");
                               }
 
@@ -187,10 +190,9 @@ round.innerHTML=
 
 $(function(){
     $('html').click(function(e){
-        var x = e.pageX;
-        var y = e.pageY;
-        marui.innerHTML+='<div style="position:absolute; top:'+y+'px; left:'+x+'px;"><img src="ten.png" ></div>';
-        alert(ten);
+        xy[ten][0] = e.pageX;
+        xy[ten][1] = e.pageY;
+        ten++;
     });
 });
   </script> 
