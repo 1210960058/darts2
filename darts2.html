@@ -160,6 +160,7 @@ c++;
                                 sum=0;
                                 r++;   
                                 a=t/r;
+
                               }
 round.innerHTML=
 "round1 =>"+asd[0]+"<br>"+
@@ -192,6 +193,10 @@ $(function(){
     $('html').click(function(e){
         xy[ten][0] = e.pageX;
         xy[ten][1] = e.pageY;
+        if(ten%3 == 0){
+          marui.innerHTML='';
+        }
+        marui.innerHTML+='<div style="position:absolute; top:'+xy[ten][1]+'px; left:'+xy[ten][0]+'px;"><img src="ten.png" ></div>';
         ten++;
     });
 });
